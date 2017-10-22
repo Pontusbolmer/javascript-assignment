@@ -1,4 +1,4 @@
-html, body {
+body {
     margin: 0;
     padding: 0;
 }
@@ -7,16 +7,19 @@ header {
 background-color: #212121;
 height: 100px;
 width: 100%;
+position: fixed;
+top: 0;
+
 
 
 }
 
 h1 {
-    margin: 0 !important;
+    text-align: center;
 }
 
 #main {
-    
+    margin-top: 100px;
 }
 
 #logo a {
@@ -37,8 +40,17 @@ h1 {
     color: #fff;
 }
 
+#kundvagn {
+    color: white;
+}
+
 #kundvagn a {
     color: white;
+}
+
+#counter {
+    margin-top: 20px;
+    margin-right: 10px;
 }
 
 #main h4 {
@@ -51,6 +63,7 @@ img {
     display:flex;
     flex-direction: column;
     margin: 0px auto 40px;
+    
     
 }
 
@@ -75,5 +88,18 @@ button {
     display: block;
     margin: 0px auto 60px;
 }
+
+
+#div1 {
+    background-color: #F5F5F5;
+    padding: 10px 0px;
+}
+
+#div4 {
+    background-color: #F5F5F5;
+    padding: 10px 0px;
+}
+
+
 
     

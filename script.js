@@ -15,127 +15,97 @@ fetch("./products.json")
 /** Uses the loaded products data to create a visible product list on the website */
 function createUIFromLoadedProducts() {
     /* Check your console to see that the products are stored in the listOfProducts varible */
-    console.log(listOfProducts);
+    //console.log(listOfProducts);
 
-    var main = document.querySelector("#main");
-    console.log(main);
+    var clicks = 0;
+    var i = 1;
+    
+
+    listOfProducts.forEach(function(product)
+    {
+        var main = document.querySelector("#main");
+        var productDiv = document.createElement("div");
+        productDiv.setAttribute("id", "div" + i);
+       console.log(product.title)
+
+       var title = document.createElement("h1");
+       title.innerText = product.title;
+       productDiv.appendChild(title);
+
+       var getproductimage = document.createElement("img");
+       getproductimage.src ="assets/" + product.image;
+       productDiv.appendChild(getproductimage);
+
+       var description = document.createElement("h3");
+       description.innerText = product.description;
+       productDiv.appendChild(description);
+        
+       var price = document.createElement("h4");
+       price.innerText = product.price + " kr";
+       productDiv.appendChild(price);
+
+       var btn = document.createElement("BUTTON");
+       btn.innerHTML = '<i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i> Lägg till i kundkorgen';
+       productDiv.appendChild(btn);
+
+       main.appendChild(productDiv);
+       
+       var kundvagn = document.querySelector("#counter");
+
+       btn.onclick = function() {
+            clicks += 1;
+            kundvagn.innerHTML = clicks;
+            alert("Du lade till " + product.title + " i kundvagnen!");
+        }
+       
+        i++;
+   });
+    
+
+        
+        
+   
+
+
+
+
+    
+    //console.log(main);//
      //main.innerHTML = "TEST";
-     // Iphone börjar här // 
-     var btn = document.createElement("BUTTON");
-     var t = document.createTextNode("Lägg till i kundkorgen");
-
-     var iPhoneX = document.createElement("h2");
-     iPhoneX.innerText = (listOfProducts[0].title);
+     // Iphone börjar här 
      
-     var iPhoneDescription = document.createElement("h4");
-     iPhoneDescription.innerText = listOfProducts[0].description;
-
-     var iPhonePrice = document.createElement("h3");
-     iPhonePrice.innerText =  listOfProducts[0].price + " kr";
-    
-     main.appendChild(iPhoneX);
-     main.appendChild(iPhoneDescription);
      
- 
-     var img = document.createElement("img");
-     img.src = "assets/iPhoneX.png";
-
-    
-    
-     main.appendChild(img);
-     main.appendChild(iPhonePrice);
-     btn.appendChild(t);
-     main.appendChild(btn); 
-
-     // Iphone slutar här //
-
-     // LGV30 börjar här //
-     var btn = document.createElement("BUTTON");
-     var t = document.createTextNode("Lägg till i kundkorgen");
- 
-     var LGV30 = document.createElement("h2");
-     LGV30.innerText = (listOfProducts[3].title);
-
-     var LGV30Description = document.createElement("h4");
-     LGV30Description.innerText = listOfProducts[3].description;
-
-     var LGV30Price = document.createElement("h3");
-     LGV30Price.innerText = listOfProducts[3].price + " kr";
- 
-     main.appendChild(LGV30);
-     main.appendChild(LGV30Description);
- 
-     var img2 = document.createElement("img");
-     img2.src = "assets/LGV30.png";
      
- 
-     main.appendChild(img2);
-     main.appendChild(LGV30Price);
-     btn.appendChild(t);
-     main.appendChild(btn);
-
-     // LGV30 slutar här //
-     // ONEPLUS 5 börjar här // 
-     var btn = document.createElement("BUTTON");
-     var t = document.createTextNode("Lägg till i kundkorgen");
-     var onePlus = document.createElement("h2");
-     onePlus.innerText = (listOfProducts[1].title);
-
-     var onePlusDescription = document.createElement("h4");
-     onePlusDescription.innerText = listOfProducts[1].description;
-
-     var onePlusPrice = document.createElement("h3");
-     onePlusPrice.innerText = listOfProducts[1].price + " kr";
-
-     main.appendChild(onePlus);
-     main.appendChild(onePlusDescription);
+      
+     
 
      
-     var img3 = document.createElement("img");
-     img3.src = "assets/OnePlus5.png";
- 
-     main.appendChild(img3);
-    main.appendChild(onePlusPrice);
-    btn.appendChild(t);
-    main.appendChild(btn);
- 
-     console.log(listOfProducts[3]);
-     console.log(listOfProducts[3].price);
+   /*
 
-     // ONEPLUS 5 slutar här //
+var span = document.querySelector("span");
+      buttonElement.onclick = function() {
+         button += 1;
+         span.innerText = button;
+      }
 
-     // samsung börjar här
-     var btn = document.createElement("BUTTON");
-     var t = document.createTextNode("Lägg till i kundkorgen");
-
-     var samsungS8 = document.createElement("h2");
-     samsungS8.innerText = (listOfProducts[2].title);
-
-     var samsungDescription = document.createElement("h4");
-     samsungDescription.innerText = listOfProducts[2].description;
-
-     var samsungPrice = document.createElement("h3");
-     samsungPrice.innerText = listOfProducts[2].price + " kr";
-
-
-     main.appendChild(samsungS8);
-     main.appendChild(samsungDescription);
-    
- 
-     var img4 = document.createElement("img");
-     img4.src = "assets/SamsungS8.png";
-     main.appendChild(img4);
-     main.appendChild(samsungPrice);
-     btn.appendChild(t);
-     main.appendChild(btn);
-
-     // samsubgn slutar här //
-
+   */
      
    
-     
+/*
     
+   
+     var clicks = 0;
+     document.getElementById("buy").addEventListener("click", function(){
+        alert("test");
+         var kundvagn = document.querySelector("#counter");
+         clicks +=1;
      
+         kundvagn.innerHTML = clicks;
+     
+         
+     }); 
+
+     */
     
 
     /* Add your code here, remember to brake your code in to
